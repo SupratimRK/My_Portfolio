@@ -29,7 +29,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "shadow-md bg-gray-900" : "bg-transparent"
+        scrolled ? "shadow-md bg-bg_color" : "bg-transparent"
       } transition-colors duration-300 ease-in-out`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -41,13 +41,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <motion.img
-            // src={logo} Uncomment and add your logo source here
+          {/* <motion.img
+            // src={logo} 
             alt="logo"
             className="w-9 h-9 object-contain"
             whileHover={{ scale: 1.2, rotate: 360 }}
             transition={{ duration: 0.5 }}
-          />
+          /> */}
           <motion.p
             className="text-white text-[18px] font-bold cursor-pointer flex"
             initial={{ opacity: 0, x: -20 }}
@@ -55,7 +55,7 @@ const Navbar = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             whileHover={{ scale: 1.1 }}
           >
-            Ritam Saha
+            <span className="logo text-3xl">Ritam Saha</span>
           </motion.p>
         </Link>
 
@@ -65,8 +65,8 @@ const Navbar = () => {
             <motion.li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-blue-400" : "text-white"
-              } hover:text-blue-400 text-[18px] font-medium cursor-pointer relative group`}
+                active === nav.title ? "text-cyan-400" : "text-white"
+              } hover:text-cyan-400 text-[18px] font-medium cursor-pointer relative group`}
               whileHover={{ scale: 1.1 }}
               onClick={() => setActive(nav.title)}
             >
@@ -76,20 +76,14 @@ const Navbar = () => {
               >
                 {nav.title}
               </a>
-              {/* Underline effect */}
+              
               <motion.span
-                className="absolute left-0 bottom-0 h-[2px] bg-blue-400 w-full"
+                className="absolute left-0 bottom-0 h-[2px] bg-cyan-300 w-full"
                 initial={{ width: 0 }}
                 animate={{ width: active === nav.title ? "100%" : "0" }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               />
-              {/* Edge lighting effect */}
-              <motion.div
-                className="absolute inset-0 rounded-lg border border-transparent group-hover:border-blue-400"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: active === nav.title ? 1 : 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              />
+              
             </motion.li>
           ))}
         </ul>
@@ -118,7 +112,7 @@ const Navbar = () => {
                 <li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-blue-400" : "text-white"
+                    active === nav.title ? "text-cyan-300" : "text-white"
                   }`}
                   onClick={() => {
                     setToggle(!toggle);
@@ -132,7 +126,7 @@ const Navbar = () => {
                     {nav.title}
                   </a>
                   <motion.span
-                    className="absolute left-0 bottom-0 h-[2px] bg-blue-300 w-full"
+                    className="absolute left-0 bottom-0 h-[2px] bg-cyan-500 w-full"
                     initial={{ width: 0 }}
                     animate={{ width: active === nav.title ? "100%" : "0" }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}

@@ -8,7 +8,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-black'>
+      <div className='relative z-0 overflow-y-scroll bg-bg-color scroll-smooth'>
         <div className='h-screen'>
           <Navbar />
           <Hero/>
