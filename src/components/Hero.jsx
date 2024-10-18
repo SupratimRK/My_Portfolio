@@ -55,8 +55,10 @@ const Home = () => {
           </div>
 
           <div className="flex items-center gap-7">
-            <a href="#" className="btn px-4 py-2 mt-6">Hire</a>
-            <a href="#contact" className="btn px-4 py-2 mt-6">Contact</a>
+            <a href="#" className="btn btns px-4 py-2 mt-6">Hire</a>
+            <a href="#contact" className="btns border-[2px] hover:bg-cyan-300 border-cyan-300 rounded-full px-4 py-2 mt-6">
+              Contact
+            </a>
           </div>
         </div>
 

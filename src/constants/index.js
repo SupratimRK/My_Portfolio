@@ -1,5 +1,11 @@
 
-const words = ["Frontend Designer", "Web Designer", "UI / UX Designer", "Web Developer", "Software Tester"];
+const words = [
+    "Frontend Designer. ",
+    "Web Designer. ",
+    "UI / UX Designer. ", 
+    "Web Developer. ", 
+    "Software Tester."
+];
 
 const socialsData = [
     {
@@ -31,16 +37,16 @@ const socialsData = [
 
 const navLinks = [
     {
-        id: "home",
-        title: "Home",
-    },
-    {
         id: "about",
         title: "About",
     },
     {
         id: "education",
         title: "Education",
+    },
+    {
+        id: "work",
+        title: "Work",
     },
     {
         id: "contact",
