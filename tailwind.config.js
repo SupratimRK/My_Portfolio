@@ -53,7 +53,10 @@ export default {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
-				}
+				},
+				'bg-color': '#080808',
+				'secondary-color': '#131313',
+				'main-color': '#00ffee'
 			}
 		}
 	},
