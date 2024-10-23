@@ -1,3 +1,4 @@
+import { web, mobile, backend, creator } from "@/assets";
 
 const words = [
     "Frontend Designer. ",
@@ -54,8 +55,30 @@ const navLinks = [
     },
 ];
 
+const services = [
+    {
+      title: "Frontend Developer",
+      icon: web,
+    },
+    {
+      title: "React Native Developer",
+      icon: mobile,
+    },
+    {
+      title: "Backend Developer",
+      icon: backend,
+    },
+    {
+      title: "Software Engineer",
+      icon: creator,
+    },
+  ];
+  
+
 export {
     socialsData,
     words,
-    navLinks
+    navLinks,
+    services
 };
+
