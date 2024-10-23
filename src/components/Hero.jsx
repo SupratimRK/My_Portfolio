@@ -29,19 +29,23 @@ const Home = () => {
   }, [charIndex, isDeleting, wordIndex, words]);
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center px-[12%] py-40 bg-black text-white" id="home">
-      <div className="flex flex-col sm:flex-row gap-12 items-center justify-between w-full">
+    <section className="relative w-full min-h-screen flex mx-auto items-center justify-center px-[12%] pt-24 lg:pt-5 bg-black text-white" id="home">
+      <div className="flex flex-col lg:flex-row lg:gap-12 gap-20  items-center justify-between w-full">
         
-        <div className="flex flex-col items-start space-y-4 max-w-xl">
+        <div className="flex justify-center lg:self-start order-1 lg:order-2">
+          <img src="My_pic.jpg" alt="My Picture" className="img_pic w-96" />
+        </div>
+
+        <div className="flex flex-col items-start space-y-4 max-w-2xl order-2 lg:order-1">
           <h1 className="text-7xl font-bold">Hi, It's <span className="text-cyan-300">Ritam</span></h1>
           <h3 className="text-3xl font-semibold">
             I'm a <span className="border-r-2 border-cyan-300 text-cyan-300 typing-text">{words[wordIndex].substring(0, charIndex)}</span>
           </h3>
-          <p className="text-lg leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cupiditate vel quas eveniet sit accusamus dignissimos ad. Repellat, laudantium ipsum perspiciatis incidunt nobis quod atque totam repudiandae officiis odit nesciunt!
+          <p className="text-lg leading-relaxed text-secondary">
+            I'm a passionate second-year Computer Science Engineering student at Bengal Institute of Technology, where I lead the DSA and CP domain at Google Developers Group on Campus. My tech journey revolves around solving complex problems and turning algorithms into my personal playground. Whether it's coding in C, Python, or Java, I love the thrill of chasing pointers 🧭, speaking the language of binary trees 🌳, and brewing solutions 💡.
           </p>
           <div className="flex my-2 gap-3">
-            {socialsData.map((social, index) =>(
+            {socialsData.map((social, index) => (
               <a
                 key={index}
                 href={social.url}
@@ -60,11 +64,6 @@ const Home = () => {
               Contact
             </a>
           </div>
-        </div>
-
-        
-        <div className="flex justify-center self-start">
-          <img src="My_pic.jpg" alt="My Picture" className="img_pic w-96" />
         </div>
       </div>
     </section>

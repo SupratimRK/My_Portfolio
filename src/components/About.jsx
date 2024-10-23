@@ -9,7 +9,7 @@ import ServiceCard from "./ServiceCard";
 
 function About() {
     return (
-        <>
+        <div className="lg:px-2 px-10 pt-40 lg:pt-0">
             <motion.div variants={textVariant(0.5)}>
                 <p className={styles.sectionSubText}>Introduction</p>
                 <h2 className={styles.sectionHeadText}>Overview.</h2>
@@ -29,7 +29,7 @@ function About() {
                 ))}
             </div>
 
-        </>
+        </div>
     )
 }
 

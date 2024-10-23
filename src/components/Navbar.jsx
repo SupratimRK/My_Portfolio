@@ -42,9 +42,9 @@ const Navbar = () => {
           }}
         >
           <motion.img
-            src='/logo.avif'
+            src='/logo.png'
             alt="logo"
-            className="w-9 h-9 object-contain"
+            className="w-9 h-9 object- mr-5"
             whileHover={{ scale: 1.2, rotate: 360 }}
             transition={{ duration: 0.5 }}
           />

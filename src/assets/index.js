@@ -1,16 +1,16 @@
 import menu from "./menu.svg"
 import close from "./close.svg"
-import web from "./icons/web.png";
-import mobile from "./icons/mobile.png";
-import backend from "./icons/backend.png";
-import creator from "./icons/creator.png";
+import Software from "./icons/se.png";
+import Prompt from "./icons/pe.png";
+import Competitive from "./icons/cp.png";
+import Computational from "./icons/cps.png";
 
 
 export {
     menu,
     close,
-    web,
-    mobile,
-    backend,
-    creator
+    Software,
+    Prompt,
+    Competitive,
+    Computational,
 }
