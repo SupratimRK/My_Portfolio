@@ -29,7 +29,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "shadow-md bg-bg_color" : "bg-transparent"
+        scrolled ? "bg-primary shadow-md bg-bg_color" : "bg-transparent"
       } transition-colors duration-300 ease-in-out`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -41,13 +41,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          {/* <motion.img
-            // src={logo} 
+          <motion.img
+            src='/logo.png'
             alt="logo"
-            className="w-9 h-9 object-contain"
+            className="w-9 h-9 object- mr-5"
             whileHover={{ scale: 1.2, rotate: 360 }}
             transition={{ duration: 0.5 }}
-          /> */}
+          />
           <motion.p
             className="text-white text-[18px] font-bold cursor-pointer flex"
             initial={{ opacity: 0, x: -20 }}

@@ -1,10 +1,10 @@
+import { Prompt, Software, Competitive, Computational } from "@/assets";
 
 const words = [
-    "Frontend Designer. ",
-    "Web Designer. ",
-    "UI / UX Designer. ", 
-    "Web Developer. ", 
-    "Software Tester."
+    "Computational Problem Solve. ",
+    "Competitive programmer. ",
+    "Prompt Engineer. ",
+    "Software Engineer. ",
 ];
 
 const socialsData = [
@@ -40,10 +40,10 @@ const navLinks = [
         id: "about",
         title: "About",
     },
-    {
-        id: "education",
-        title: "Education",
-    },
+    // {
+    //     id: "education",
+    //     title: "Education",
+    // },
     {
         id: "work",
         title: "Work",
@@ -54,8 +54,31 @@ const navLinks = [
     },
 ];
 
+const services = [
+    {
+        title: "Computational Problem Solver",
+        icon: Computational,
+    },
+    {
+        title: "Competitive programmer",
+        icon: Competitive,
+    },
+    {
+        title: "Prompt Engineer",
+        icon: Prompt,
+    },
+    {
+        title: "Software Engineer",
+        icon: Software,
+    },
+
+];
+
+
 export {
     socialsData,
     words,
-    navLinks
+    navLinks,
+    services
 };
+
