@@ -59,7 +59,7 @@ const Navbar = () => {
           </motion.p>
         </Link>
 
-        {/* Desktop Navbar Links */}
+        
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((nav) => (
             <motion.li
@@ -88,7 +88,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Navbar Toggle */}
+        
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <motion.img
             src={toggle ? close : menu}
