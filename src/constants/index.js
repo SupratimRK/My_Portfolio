@@ -1,7 +1,7 @@
 import { Prompt, Software, Competitive, Computational } from "@/assets";
 
 const words = [
-    "Computational Problem Solve. ",
+    "Computational Problem Solver. ",
     "Competitive programmer. ",
     "Prompt Engineer. ",
     "Software Engineer. ",
