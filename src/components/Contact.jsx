@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { styles } from "@/styles";
 import { SectionWrapper } from "@/hooks";
 import { fadeIn, textVariant } from "@/utils/motion";
+import { Email } from "@/constants";
 
 const Contact = () => {
     const formRef = useRef();
@@ -36,7 +37,7 @@ const Contact = () => {
                     from_name: form.name,
                     to_name: "Ritam Saha",
                     from_email: form.email,
-                    to_email: "ritamsaha75579@gmail.com",
+                    to_email: Email,
                     message: form.message,
                 },
                 PUBLIC_KEY
@@ -90,7 +91,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h4 className="text-white font-medium">Email</h4>
-                                <p className="text-secondary">ritamsaha75579@gmail.com</p>
+                                <p className="text-secondary">{Email}</p>
                             </div>
                         </div>
                         

@@ -87,6 +87,9 @@ const about_page_text = "I am currently pursuing my Bachelor's degree, where I a
 const Work_page_text = "As a fresher in the field, I have yet to gain industrial experience but am actively working on personal and academic projects, driven by a strong eagerness to learn and grow .I serve as the Lead of the Data Structures and Algorithms & Competitive Programming domain for Google Developers Group on Campus at Bengal Institute of Technology, where I organize and lead coding workshops, interactive sessions, and theme-based contests to cultivate foundational skills and a passion for coding among students. In this role, I've focused on making learning engaging and accessible, fostering a collaborative atmosphere and guiding junior peers. Additionally, as the Campus Ambassador for E-Summit '24 at Jadavpur University, I am dedicated to enhancing outreach and connecting students with unique opportunities in entrepreneurship and innovation."
 
 
+const Email = "ritamsaha75579@gmail.com";
+
+
 export {
     socialsData,
     words,
@@ -95,6 +98,7 @@ export {
     techStack,
     home_page_text,
     about_page_text,
-    Work_page_text
+    Work_page_text,
+    Email
 };
 
