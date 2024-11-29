@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "@/styles";
@@ -14,6 +14,11 @@ const Contact = () => {
     });
     const [loading, setLoading] = useState(false);
 
+    const SERVICE_ID = import.meta.env.VITE_SEVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
@@ -25,8 +30,8 @@ const Contact = () => {
 
         emailjs
             .send(
-                'YOUR_SERVICE_ID',
-                'YOUR_TEMPLATE_ID',
+                SERVICE_ID,
+                TEMPLATE_ID,
                 {
                     from_name: form.name,
                     to_name: "Ritam Saha",
@@ -34,7 +39,7 @@ const Contact = () => {
                     to_email: "ritamsaha75579@gmail.com",
                     message: form.message,
                 },
-                'YOUR_PUBLIC_KEY'
+                PUBLIC_KEY
             )
             .then(() => {
                 setLoading(false);
