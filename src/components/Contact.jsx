@@ -29,9 +29,9 @@ const Contact = () => {
                 'YOUR_TEMPLATE_ID',
                 {
                     from_name: form.name,
-                    to_name: "Your Name",
+                    to_name: "Ritam Saha",
                     from_email: form.email,
-                    to_email: "your@email.com",
+                    to_email: "ritamsaha75579@gmail.com",
                     message: form.message,
                 },
                 'YOUR_PUBLIC_KEY'
@@ -85,7 +85,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h4 className="text-white font-medium">Email</h4>
-                                <p className="text-secondary"></p>
+                                <p className="text-secondary">ritamsaha75579@gmail.com</p>
                             </div>
                         </div>
                         
@@ -98,7 +98,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h4 className="text-white font-medium">Location</h4>
-                                <p className="text-secondary">Your Location</p>
+                                <p className="text-secondary">Kolkata, West Bengal, India</p>
                             </div>
                         </div>
                     </div>
