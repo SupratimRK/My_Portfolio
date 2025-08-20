@@ -74,7 +74,7 @@ const services = [
 
 ];
 
-const techStack = ["C", "Cpp", "Python", "Java", "Chatgpt", "Gemini", "Notion"].map(name => ({
+const techStack = ["C", "Java", "Python", "html", "css", "js", "nodejs", "Expressjs", "React", "Mysql", "Mongodb", "VScode", "Git", "Github", "Ubuntu", "Notion"].map(name => ({
     name,
     imageUrl: `https://go-skill-icons.vercel.app/api/icons?i=${name.toLowerCase()}`
 }));
