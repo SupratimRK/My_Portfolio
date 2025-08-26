@@ -6,7 +6,6 @@ import { SectionWrapper } from '@/hooks';
 import { fadeIn, textVariant } from '@/utils/motion';
 import ServiceCard from "./ServiceCard";
 
-
 function About() {
     return (
         <div className="px-4 sm:px-6 lg:px-8">
@@ -28,9 +27,11 @@ function About() {
                 </h2>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mx-0 md:mx-32 lg:mx-0 sm:gap-6 md:gap-10 lg:gap-6 max-w-7xl">
                 {services.map((service, index) => (
-                    <ServiceCard key={service.title} index={index} {...service} />
+                    <div className="w-full sm:max-w-[320px] mx-auto">
+                        <ServiceCard key={service.title} index={index} {...service} />
+                    </div>
                 ))}
             </div>
         </div>
