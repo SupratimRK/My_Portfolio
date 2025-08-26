@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my journey as a **Computationa
 
 ## 🚀 Live Demo
 
-Visit my portfolio: [Portfolio](https://ritamsaha.vercel.app/)
+Visit my portfolio: [LINK](https://ritamsaha.vercel.app/)
 
 ## 🛠️ Tech Stack
 
