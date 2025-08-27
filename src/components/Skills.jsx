@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { techStack } from '@/constants'
 import { styles } from '@/styles'
+import { SectionWrapper } from '@/hooks'
 
 function Skills() {
     return (
@@ -38,4 +39,4 @@ function Skills() {
     )
 }
 
-export default Skills
+export default SectionWrapper(Skills, "skills");
