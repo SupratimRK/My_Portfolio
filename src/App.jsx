@@ -4,7 +4,8 @@ import Navbar from './components/Navbar'
 import { BrowserRouter } from "react-router-dom";
 import Hero from './components/Hero';
 import About from './components/About';
-import Work from './components/Work';
+import Education from './components/Education';
+import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 
@@ -12,14 +13,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className=' z-0 bg-black scroll-smooth'>
+      <div className='z-0 bg-gradient-to-br from-slate-50 to-blue-50 scroll-smooth min-h-screen'>
         <div className='min-h-screen'>
           <Navbar />
           <Hero/>
         </div>
         <div className="mt-10">
           <About/>
-          <Work/>
+          <Education/>
+          <Projects/>
           <Skills/>
           <Contact/>
         </div>

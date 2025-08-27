@@ -1,10 +1,10 @@
 import { Prompt, Software, Competitive, Computational } from "@/assets";
 
 const words = [
-    "Computational Problem Solver. ",
-    "Competitive programmer. ",
-    "Prompt Engineer. ",
-    "Software Engineer. ",
+    "Software Developer",
+    "Problem Solver",
+    "MERN Stack Developer",
+    "Competitive Programmer",
 ];
 
 const socialsData = [
@@ -40,13 +40,13 @@ const navLinks = [
         id: "about",
         title: "About",
     },
-    // {
-    //     id: "education",
-    //     title: "Education",
-    // },
     {
-        id: "work",
-        title: "Work",
+        id: "education",
+        title: "Education",
+    },
+    {
+        id: "projects",
+        title: "Projects",
     },
     {
         id: "contact",
@@ -56,22 +56,25 @@ const navLinks = [
 
 const services = [
     {
-        title: "Computational Problem Solver",
+        title: "Problem Solving & Algorithms",
         icon: Computational,
+        description: "Expert in data structures, algorithms, and computational problem-solving with strong analytical thinking."
     },
     {
-        title: "Competitive programmer",
+        title: "Competitive Programming",
         icon: Competitive,
+        description: "Active competitive programmer with experience in coding contests and algorithmic challenges."
     },
     {
-        title: "Prompt Engineer",
+        title: "AI & Prompt Engineering",
         icon: Prompt,
+        description: "Skilled in AI prompt design, optimization, and working with large language models and AI tools."
     },
     {
-        title: "Software Engineer",
+        title: "Full-Stack Development",
         icon: Software,
+        description: "Proficient in modern web technologies including MERN stack, responsive design, and scalable applications."
     },
-
 ];
 
 const techStack = ["C", "Java", "Python", "html", "css", "js", "nodejs", "Expressjs", "React", "Mysql", "Mongodb", "VScode", "Git", "Github", "Ubuntu", "Notion"].map(name => ({
@@ -80,9 +83,9 @@ const techStack = ["C", "Java", "Python", "html", "css", "js", "nodejs", "Expres
 }));
 
 
-const home_page_text = "I'm a passionate second-year Computer Science Engineering student at Bengal Institute of Technology, where I lead the DSA (Data Structures and Algorithms) and CP (Competitive Programming) domain at Google Developer Student Clubs (GDSC) on campus. In this role, I mentor fellow students, organize coding bootcamps, and lead hands-on workshops to help peers master complex algorithms and optimize their problem-solving skills. I actively contribute to fostering a collaborative learning environment where students can excel in coding competitions like Codeforces, LeetCode, and HackerRank. My journey is driven by a relentless curiosity for software development, algorithmic problem-solving, and empowering others to unlock their potential in the world of tech"
+const home_page_text = "A 3rd-year Computer Science Engineering student at Techno Bengal Institute of Technology with a strong passion for problem-solving, algorithms, and emerging technologies. My journey has been shaped by exploring the depth of coding, AI, and innovation while continuously striving to create meaningful impact through technology. I bring with me valuable past experiences as the Lead of DSA and CP at GDG on Campus BIT and as a Campus Ambassador for E-Summit'24, Jadavpur University. These roles have helped me develop leadership, mentorship, and collaboration skills while working with diverse teams and communities."
 
-const about_page_text = "I am currently pursuing my Bachelor's degree, where I am deeply passionate about software development, web development, and mobile app development. My interests also extend to the exciting fields of cybersecurity and Web3 technologies. I am continuously exploring new ways to enhance my skills and stay at the forefront of technological advancements. Whether it's building responsive websites, developing secure applications, or delving into decentralized solutions, I am committed to expanding my expertise and contributing to innovative projects. My goal is to become a versatile developer who can navigate both traditional and cutting-edge technologies to create impactful solutions."
+const about_page_text = "I am a dedicated Computer Science Engineering student with a strong foundation in software development, problem-solving, and modern web technologies. My expertise spans across full-stack development using the MERN stack, competitive programming, and emerging technologies like AI and prompt engineering. I am passionate about creating efficient, scalable solutions and continuously expanding my technical knowledge to stay at the forefront of technological innovation. Through my leadership roles and project experience, I have developed strong collaboration skills and a commitment to mentoring others in the tech community."
 
 const Work_page_text = "As a fresher in the field, I have yet to gain industrial experience but am actively working on personal and academic projects, driven by a strong eagerness to learn and grow .I serve as the Lead of the Data Structures and Algorithms & Competitive Programming domain for Google Developers Group on Campus at Bengal Institute of Technology, where I organize and lead coding workshops, interactive sessions, and theme-based contests to cultivate foundational skills and a passion for coding among students. In this role, I've focused on making learning engaging and accessible, fostering a collaborative atmosphere and guiding junior peers. Additionally, as the Campus Ambassador for E-Summit '24 at Jadavpur University, I am dedicated to enhancing outreach and connecting students with unique opportunities in entrepreneurship and innovation."
 

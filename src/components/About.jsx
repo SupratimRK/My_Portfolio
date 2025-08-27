@@ -8,28 +8,36 @@ import ServiceCard from "./ServiceCard";
 
 function About() {
     return (
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div className="px-4 sm:px-6 lg:px-8 bg-white py-16">
             <motion.div variants={textVariant(0.1)}>
-                <p className={styles.sectionSubText}>Introduction</p>
-                <h2 className={styles.sectionHeadText}>Overview.</h2>
+                
+                <h2 className={`${styles.sectionHeadText} text-navy-900`}>About Me.</h2>
             </motion.div>
 
             <motion.p 
                 variants={fadeIn("", "", 0.1, 1)} 
-                className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+                className="mt-4 text-navy-700 text-[17px] max-w-3xl leading-[30px]"
             >
                 {about_page_text}
             </motion.p>
 
             <div className="flex justify-center items-center mt-12 sm:mt-16">
-                <h2 className="text-white text-[32px] sm:text-[40px] font-bold text-center">
-                    Service
-                </h2>
+                <div className="text-center">
+                    <h2 className="text-navy-900 text-[32px] sm:text-[40px] font-bold mb-4">
+                        Technical Expertise
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-navy-500 to-navy-700 mx-auto rounded-full"></div>
+                    <p className="mt-4 text-navy-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Specialized domains where I bring innovation and technical excellence
+                    </p>
+                </div>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mx-0 md:mx-32 lg:mx-0 sm:gap-6 md:gap-10 lg:gap-6 max-w-7xl">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mx-0 md:mx-16 lg:mx-0 max-w-7xl"
+                 style={{ background: 'linear-gradient(135deg, transparent 0%, rgba(71, 85, 105, 0.02) 50%, transparent 100%)' }}
+            >
                 {services.map((service, index) => (
-                    <div className="w-full sm:max-w-[320px] mx-auto">
+                    <div key={service.title} className="w-full sm:max-w-[320px] mx-auto">
                         <ServiceCard key={service.title} index={index} {...service} />
                     </div>
                 ))}
