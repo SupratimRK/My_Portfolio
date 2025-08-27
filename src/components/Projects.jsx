@@ -107,7 +107,7 @@ function Projects() {
       title: "Jersify",
       status: "In Development", 
       description: "A modern e-commerce platform dedicated to football enthusiasts, offering authentic team jerseys and personalized football kits. Features include advanced product catalog, secure checkout process, and optimized shopping experience with real-time inventory management.",
-      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Stripe API", "Cloudinary", "Redux Toolkit"],
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Stripe API", "Cloudinary", "Tailwind CSS"],
       highlights: [
         "Dynamic product catalog with advanced filtering, sorting, and search capabilities",
         "Secure payment processing integration with Stripe for multiple payment methods",

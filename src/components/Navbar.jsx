@@ -21,6 +21,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Smooth scrolling function with offset for fixed navbar
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // Offset for fixed navbar
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -50 }}
@@ -72,15 +86,17 @@ const Navbar = () => {
                   : "text-navy-600"
               } text-[18px] font-medium cursor-pointer relative group`}
               whileHover={{ scale: 1.05 }}
-              onClick={() => setActive(nav.title)}
+              onClick={() => {
+                setActive(nav.title);
+                scrollToSection(nav.id);
+              }}
             >
-              <a
-                href={`#${nav.id}`}
+              <span
                 className="transition duration-300 ease-in-out hover:text-navy-800 relative"
               >
                 {nav.title}
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-navy-600 to-navy-800 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
-              </a>
+              </span>
             </motion.li>
           ))}
         </ul>
@@ -122,14 +138,14 @@ const Navbar = () => {
                       onClick={() => {
                         setToggle(!toggle);
                         setActive(nav.title);
+                        scrollToSection(nav.id);
                       }}
                     >
-                      <a
-                        href={`#${nav.id}`}
+                      <span
                         className="block w-full p-2 rounded-lg hover:bg-navy-50 transition-all duration-300"
                       >
                         {nav.title}
-                      </a>
+                      </span>
                     </motion.li>
                   ))}
                 </ul>

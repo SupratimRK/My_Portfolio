@@ -1,6 +1,7 @@
 import { home_page_text, socialsData, words } from "@/constants";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
 const Home = () => {
   const [wordIndex, setWordIndex] = useState(0);
@@ -110,13 +111,24 @@ const Home = () => {
           >
             <div className="absolute inset-5 bg-gradient-to-r from-navy-300/20 to-blue-300/20 rounded-full blur-2xl transform scale-110 
               group-hover:from-navy-400/30 group-hover:to-blue-400/30 group-hover:blur-3xl transition-all duration-300" />
-            <img 
-              src="My_pic.jpg" 
-              alt="My Picture" 
-              className="relative w-56 sm:w-64 md:w-80 rounded-full border-4 border-navy-300/40 shadow-xl 
-                hover:scale-105 transition-all duration-300 group-hover:border-navy-400/60 
-                group-hover:shadow-navy-300/30 group-hover:shadow-2xl" 
-            />
+            
+            <Tilt
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={1000}
+              scale={1.02}
+              transitionSpeed={1000}
+              gyroscope={true}
+              className="tilt-container"
+            >
+              <img 
+                src="My_pic.jpg" 
+                alt="My Picture" 
+                className="relative w-56 sm:w-64 md:w-80 rounded-full border-4 border-navy-300/40 shadow-xl 
+                  hover:scale-105 transition-all duration-300 group-hover:border-navy-400/60 
+                  group-hover:shadow-navy-300/30 group-hover:shadow-2xl" 
+              />
+            </Tilt>
           </motion.div>
         </div>
       </div>

@@ -34,7 +34,7 @@ function Education() {
       degree: "Bachelor of Technology in Computer Science Engineering",
       institution: "Techno Bengal Institute of Technology",
       duration: "2023 - 2027 (Expected)",
-      gpa: "7.6 GPA",
+      gpa: "7.58 GPA",
       description: "Currently in 3rd year, pursuing B.Tech with focus on software development, algorithms, and emerging technologies. Won silver medal in Code-Ardor competition during college Tech-fest. Active in coding communities and competitive programming."
     },
     {
