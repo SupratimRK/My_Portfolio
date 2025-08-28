@@ -60,7 +60,6 @@ const Contact = () => {
 
     return (
         <div className="relative px-4 sm:px-6 lg:px-8 py-16 overflow-hidden bg-white">
-            
             <div className="absolute top-0 left-0 w-72 h-72 bg-navy-200/30 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"></div>
             <div className="absolute top-0 right-0 w-72 h-72 bg-blue-200/30 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-slate-200/30 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000"></div>
@@ -71,7 +70,6 @@ const Contact = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 relative z-10 max-w-6xl mx-auto">
-                
                 <motion.div
                     variants={fadeIn("right", "", 0.2, 1)}
                     className="flex flex-col space-y-6"
@@ -81,7 +79,6 @@ const Contact = () => {
                         I'm currently available for freelance work or full-time positions.
                         Drop me a line if you'd like to work together!
                     </p>
-                    
                     <div className="flex flex-col space-y-4">
                         <div className="flex items-center space-x-4">
                             <div className="w-12 h-12 rounded-full bg-navy-100 flex items-center justify-center border border-navy-300">
@@ -94,7 +91,6 @@ const Contact = () => {
                                 <p className="text-navy-600">{Email}</p>
                             </div>
                         </div>
-                        
                         <div className="flex items-center space-x-4">
                             <div className="w-12 h-12 rounded-full bg-navy-100 flex items-center justify-center border border-navy-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-navy-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,6 +101,18 @@ const Contact = () => {
                             <div>
                                 <h4 className="text-navy-900 font-medium">Location</h4>
                                 <p className="text-navy-600">Kolkata, West Bengal, India</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                            <div className="w-12 h-12 rounded-full bg-navy-100 flex items-center justify-center border border-navy-300">
+                                {/* WhatsApp SVG Logo */}
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="h-6 w-6 text-navy-600">
+                                    <path fill="currentColor" d="M16 3C9.373 3 4 8.373 4 15c0 2.637.86 5.08 2.34 7.09L4 29l7.18-2.29A12.93 12.93 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22.917c-2.13 0-4.21-.62-5.97-1.8l-.43-.27-4.27 1.36 1.4-4.16-.28-.44A9.93 9.93 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.29-7.6c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.21-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.36-.26.29-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3.01.15.19 2.03 3.1 4.93 4.22.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 className="text-navy-900 font-medium">Prefer direct messaging?</h4>
+                                <a href="https://wa.me/917044037047" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-green-500">Message me on WhatsApp</a>
                             </div>
                         </div>
                     </div>
@@ -159,17 +167,15 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            className="bg-navy-600 hover:bg-navy-700 py-3 px-8 outline-none w-fit text-white font-bold shadow-lg rounded-xl transition-all duration-300 transform hover:scale-105"
+                            className="bg-navy-600 hover:bg-navy-700 py-3 px-8 outline-none w-fit text-white font-bold shadow-lg rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
                             disabled={loading}
                         >
-                            {loading ? (
-                                <div className="flex items-center justify-center">
-                                    <div className="w-5 h-5 border-t-2 border-white rounded-full animate-spin mr-2"></div>
-                                    Sending...
-                                </div>
-                            ) : (
-                                "Send Message"
+                            {loading && (
+                                <span className="flex items-center">
+                                    <span className="w-5 h-5 border-t-2 border-white rounded-full animate-spin mr-2"></span>
+                                </span>
                             )}
+                            {loading ? "Sending..." : "Send Message"}
                         </button>
                     </form>
                 </motion.div>

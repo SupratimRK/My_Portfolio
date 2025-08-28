@@ -8,15 +8,14 @@ import ServiceCard from "./ServiceCard";
 
 function About() {
     return (
-        <div className="px-4 sm:px-6 lg:px-8 bg-white py-16">
-            <motion.div variants={textVariant(0.1)}>
-                
-                <h2 className={`${styles.sectionHeadText} text-navy-900`}>About Me.</h2>
-            </motion.div>
+    <div className="px-4 sm:px-6 lg:px-8 bg-white py-8">
+        <motion.div variants={textVariant(0.1)} className="text-center">
+            <h2 className={`${styles.sectionHeadText} text-navy-900`}>About Me.</h2>
+        </motion.div>
 
             <motion.p 
                 variants={fadeIn("", "", 0.1, 1)} 
-                className="mt-4 text-navy-700 text-[17px] max-w-3xl leading-[30px]"
+                className="mt-4 text-navy-700 text-[17px] max-w-10xl leading-[30px]"
             >
                 {about_page_text}
             </motion.p>
