@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my journey as a **Computationa
 
 ## 🚀 Live Demo
 
-Visit my portfolio: [LINK](https://ritamsaha.vercel.app/)
+Visit my portfolio: [LINK](https://www.ritamsaha.me/)
 
 ## 🛠️ Tech Stack
 
@@ -132,3 +132,4 @@ This project is open source and available under the MIT License.
 ---
 
 **Made with ❤️ by Ritam Saha**
+
