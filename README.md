@@ -131,5 +131,6 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Made with ❤️ by Ritam Saha**
+**Made with ❤️ by [Ritam Saha](https://github.com/Ritam369)**
+
 
