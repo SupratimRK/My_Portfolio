@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { styles } from "@/styles";
 import { SectionWrapper } from "@/hooks";
 import { fadeIn, textVariant } from "@/utils/motion";
@@ -15,47 +14,46 @@ const Contact = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    const SERVICE_ID = import.meta.env.VITE_SEVICE_ID;
-    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
-    const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
-        emailjs
-            .send(
-                SERVICE_ID,
-                TEMPLATE_ID,
-                {
-                    from_name: form.name,
-                    to_name: "Ritam Saha",
-                    from_email: form.email,
-                    to_email: Email,
-                    message: form.message,
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-                PUBLIC_KEY
-            )
-            .then(() => {
-                setLoading(false);
-                alert("Thank you. I will get back to you as soon as possible.");
+                body: JSON.stringify({
+                    name: form.name,
+                    email: form.email,
+                    message: form.message,
+                }),
+            });
+
+            if (response.ok) {
+                alert("Thank you for your message! I've sent you a confirmation email.");
                 setForm({
                     name: "",
                     email: "",
                     message: "",
                 });
-            })
-            .catch((error) => {
-                setLoading(false);
-                console.log(error);
-                alert("Something went wrong. Please try again.");
-            });
+            } else {
+                const errorData = await response.json();
+                alert(`Something went wrong: ${errorData.message || 'Please try again.'}`);
+            }
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
