@@ -59,3 +59,4 @@ dist
 
 # Stores VS Code settings
 .vscode/settings.json
+.vercel

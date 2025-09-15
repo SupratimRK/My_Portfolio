@@ -25,7 +25,8 @@ const Contact = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('/api/contact', {
+            const apiUrl = import.meta.env.DEV ? 'http://localhost:3000/api/contact' : '/api/contact';
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
