@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: "Missing required fields" });
     }
 
-    // Modern table-based responsive email template for the user
+  
     const userHtml = `<!doctype html>
 <html>
   <head>
