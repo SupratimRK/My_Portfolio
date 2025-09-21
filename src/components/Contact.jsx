@@ -39,7 +39,7 @@ const Contact = () => {
             });
 
             if (response.ok) {
-                alert("Thank you for your message! I've sent you a confirmation email.");
+                alert("Thank you for your message! I\'ve sent you a confirmation email.");
                 setForm({
                     name: "",
                     email: "",
@@ -73,10 +73,10 @@ const Contact = () => {
                     variants={fadeIn("right", "", 0.2, 1)}
                     className="flex flex-col space-y-6"
                 >
-                    <h3 className="text-2xl font-bold text-navy-900">Let's Connect</h3>
+                    <h3 className="text-2xl font-bold text-navy-900">Let&apos;s Connect</h3>
                     <p className="text-navy-700 text-lg leading-relaxed">
-                        I'm currently available for freelance work or full-time positions.
-                        Drop me a line if you'd like to work together!
+                        I&apos;m currently available for freelance work or full-time positions.
+                        Drop me a line if you&apos;d like to work together!
                     </p>
                     <div className="flex flex-col space-y-4">
                         <div className="flex items-center space-x-4">

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { techStack } from '@/constants'
 import { styles } from '@/styles'
 import { SectionWrapper } from '@/hooks'
+import Image from 'next/image'
 
 function Skills() {
     return (
@@ -26,11 +27,21 @@ function Skills() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ scale: 1.1 }}
                         >
-                            <img
-                                src={skill.imageUrl}
-                                alt={skill.name}
-                                className='w-14 h-14 object-contain group-hover:scale-110 transition-transform'
-                            />
+                            {skill.imageUrl && skill.imageUrl.includes('go-skill-icons.vercel.app') ? (
+                                <img
+                                    src={skill.imageUrl}
+                                    alt={skill.name}
+                                    className='w-14 h-14 object-contain group-hover:scale-110 transition-transform'
+                                />
+                            ) : (
+                                <Image
+                                    src={skill.imageUrl}
+                                    alt={skill.name}
+                                    width={56}
+                                    height={56}
+                                    className='object-contain group-hover:scale-110 transition-transform'
+                                />
+                            )}
                         </motion.div>
                     ))}
                 </motion.div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image'
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -47,21 +47,16 @@ const Navbar = () => {
         }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
-          className="flex items-center gap-2"
+        <div
+          className="flex items-center gap-2 cursor-pointer"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <motion.img
-            src='/logo.png'
-            alt="logo"
-            className="w-9 h-9 object-contain mr-5"
-            whileHover={{ scale: 1.2, rotate: 360 }}
-            transition={{ duration: 0.5 }}
-          />
+          <motion.div whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.5 }} className="mr-5">
+            <Image src="/logo.png" alt="logo" width={36} height={36} className="object-contain rounded" />
+          </motion.div>
           <motion.p
             className="text-navy-900 text-[18px] font-bold cursor-pointer flex"
             initial={{ opacity: 0, x: -20 }}
@@ -73,7 +68,7 @@ const Navbar = () => {
               Ritam Saha
             </span>
           </motion.p>
-        </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -109,11 +104,7 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
             className="w-10 h-10 rounded-full bg-gradient-to-r from-navy-100 to-navy-200 flex items-center justify-center cursor-pointer border border-navy-300"
           >
-            <img
-              src={toggle ? close : menu}
-              alt="menu"
-              className="w-[23px] h-[23px] object-contain"
-            />
+            <Image src={toggle ? close : menu} alt="menu" width={23} height={23} className="object-contain" />
           </motion.div>
 
           <AnimatePresence>

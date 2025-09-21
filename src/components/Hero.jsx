@@ -2,6 +2,7 @@ import { home_page_text, socialsData, words } from "@/constants";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import Image from 'next/image'
 
 const Home = () => {
   const [wordIndex, setWordIndex] = useState(0);
@@ -47,10 +48,10 @@ const Home = () => {
             className="flex flex-col items-start space-y-4 sm:space-y-6 max-w-2xl order-2 lg:order-1"
           >
             <h1 className="text-5xl md:text-7xl font-bold animate-fadeIn text-navy-900">
-              Hi, I'm <span className="text-navy-600 hover:text-navy-700 transition-colors">Ritam</span>
+              Hi, I&apos;m <span className="text-navy-600 hover:text-navy-700 transition-colors">Ritam</span>
             </h1>
             <h3 className="text-2xl md:text-3xl font-semibold text-navy-800">
-              I'm a <span className="border-r-2 border-navy-600 text-navy-600 typing-text">{words[wordIndex].substring(0, charIndex)}</span>
+              I&apos;m a <span className="border-r-2 border-navy-600 text-navy-600 typing-text">{words[wordIndex].substring(0, charIndex)}</span>
             </h3>
             <p className="text-base md:text-lg leading-relaxed text-navy-700 hover:text-navy-800 transition-colors">
               {home_page_text}
@@ -121,13 +122,15 @@ const Home = () => {
               gyroscope={true}
               className="tilt-container"
             >
-              <img 
-                src="My_pic.jpg" 
-                alt="My Picture" 
-                className="relative w-56 sm:w-64 md:w-80 rounded-full border-4 border-navy-300/40 shadow-xl 
-                  hover:scale-105 transition-all duration-300 group-hover:border-navy-400/60 
-                  group-hover:shadow-navy-300/30 group-hover:shadow-2xl" 
-              />
+              <motion.div whileHover={{ scale: 1.03 }}>
+                <Image
+                  src="/My_pic.jpg"
+                  alt="My Picture"
+                  width={320}
+                  height={320}
+                  className="relative rounded-full border-4 border-navy-300/40 shadow-xl hover:scale-105 transition-all duration-300 group-hover:border-navy-400/60 group-hover:shadow-navy-300/30 group-hover:shadow-2xl"
+                />
+              </motion.div>
             </Tilt>
           </motion.div>
         </div>

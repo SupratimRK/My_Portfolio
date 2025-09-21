@@ -1,31 +1,26 @@
 import { Resend } from "resend";
+import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-export default async function handler(req, res) {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  // Handle preflight OPTIONS request
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+export async function POST(request) {
+  // Initialize Resend client lazily to avoid build-time failures when
+  // environment variables are not present during static analysis.
+  const apiKey = process.env.RESEND_API_KEY;
+  let resend;
+  if (apiKey) {
+    resend = new Resend(apiKey);
+  } else {
+    // If the API key is missing, return a 503 to indicate the email service
+    // is unavailable. This prevents build-time crashes.
+    return NextResponse.json({ message: "Email service unavailable (missing API key)" }, { status: 503 });
   }
-
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message } = await request.json();
 
     // Validate required fields
     if (!name || !email || !message) {
-      return res.status(400).json({ message: "Missing required fields" });
+      return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
     }
 
-  
     const userHtml = `<!doctype html>
 <html>
   <head>
@@ -54,7 +49,7 @@ export default async function handler(req, res) {
             <tr>
               <td style="padding:40px 30px; color:#111111; font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size:16px; line-height:1.6;">
                 <h1 style="margin:0 0 24px; font-size:28px; font-weight:700;">Thanks for reaching out, ${name}!</h1>
-              <p style="margin:0 0 24px;">I&apos;ve received your message and will get back to you as soon as possible. Here is a copy of your message for your records:</p>
+                <p style="margin:0 0 24px;">I&apos;ve received your message and will get back to you as soon as possible. Here is a copy of your message for your records:</p>
                 <!-- Message Details Table -->
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #eeeeee;">
                   <tr>
@@ -153,9 +148,7 @@ export default async function handler(req, res) {
 
     if (userEmailError) {
       console.error("User email error:", userEmailError);
-      return res
-        .status(500)
-        .json({ message: "Failed to send confirmation email" });
+      return NextResponse.json({ message: "Failed to send confirmation email" }, { status: 500 });
     }
 
     // Send notification email to yourself
@@ -172,9 +165,20 @@ export default async function handler(req, res) {
       // Don't fail the request if owner email fails, but log it
     }
 
-    res.status(200).json({ message: "Emails sent successfully" });
+    return NextResponse.json({ message: "Emails sent successfully" }, { status: 200 });
   } catch (error) {
     console.error("Server error:", error);
-    res.status(500).json({ message: "Internal server error" });
+    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }
+}
+
+export async function OPTIONS(request) {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }
